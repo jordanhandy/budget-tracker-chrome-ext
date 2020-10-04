@@ -25,7 +25,7 @@ $(function(){
         chrome.storage.sync.set({'total': 0},function(){
             var notifOptions = {
                 type: 'basic',
-                iconURL: 'icon48.png',
+                iconUrl: 'icon48.png',
                 title: 'Total Reset!',
                 message: "Your spending total has been reset to zero (0)"
             };

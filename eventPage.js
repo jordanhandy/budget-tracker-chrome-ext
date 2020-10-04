@@ -40,7 +40,7 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
                     {
                         var notifOptions = {
                             type: 'basic',
-                            iconURL: 'icon48.png',
+                            iconUrl: 'icon48.png',
                             title: 'Limit reached!',
                             message: "Uh-oh.  Looks like you've reached your spending limit!"
                         };
