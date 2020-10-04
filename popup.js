@@ -28,7 +28,7 @@ $(function(){
             if(budget.total){
                 newTotal += parseInt(budget.total);
             }
-            var amount = $('amount').val();
+            var amount = $('#amount').val();
             if(amount){
                 newTotal += parseInt(amount);
             }
