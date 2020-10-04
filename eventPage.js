@@ -34,6 +34,8 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
                 }
                 newTotal += parseInt(clickData.selectionText);
                 chrome.storage.sync.set({'total': newTotal},function(){
+                    // send notification if the newly appended value is over the
+                    // defined spending limit
                     if (newTotal >= budget.limit)
                     {
                         var notifOptions = {
@@ -48,4 +50,11 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
             });
         }
     }
+});
+// when the value of the total spend changes,
+// show a badge over top of the extension icon, so that a user
+// can quickly see what the total spend is, at a glance
+chrome.storage.onChanged.addListener(function(changes,storageName){
+    chrome.browserAction.setBadgeText({"text": changes.total.newValue.toString()});
+
 });
